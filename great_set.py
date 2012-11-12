@@ -79,7 +79,7 @@ class GreatSet(object):
 
     def _make_track_table(self, track_list):
         # Start the table
-        table = '<table border="1"><tr><th>Spotify</th><th>Hotttnesss</th><th>Duration</th> <th>Tempo</th> <th>Energy</th> <th>Danceability</th><th>Track ID</th> </tr>'
+        table = '<table border="1"><tr><th>Spotify</th> <th>Hotttnesss</th> <th>Familiarity</th> <th>Duration</th> <th>Tempo</th> <th>Energy</th> <th>Danceability</th><th>Track ID</th> </tr>'
         totalDuration = 0
         for t in track_list:
             if t["hotttnesss"] > 0.65:
@@ -90,7 +90,9 @@ class GreatSet(object):
                 hotttnessColor = "yellow"
             else:
                 hotttnessColor = "blue"
-        
+
+            familiarityColor = "white"
+
             if t["energy"] > 0.75:
                 energyColor = "red"
             elif t["energy"] > 0.5:
@@ -108,6 +110,7 @@ class GreatSet(object):
             table += '<tr>'
             table += '<td><iframe src="https://embed.spotify.com/?uri=spotify:track:%s" frameborder="0" width="400" height="80" allowtransparency="true"></iframe></td>' % t["foreign_id"]
             table += '<td align="center" bgcolor=' + hotttnessColor + '>%1.3f</td>' % t["hotttnesss"]
+            table += '<td align="center" bgcolor=' + familiarityColor + '>%1.3f</td>' % t["familiarity"]
             table += '<td align="center">' + duration + '</td>'
             table += '<td align="center">%3.1f BPM</td>' % t['tempo']
             table += '<td align="center" bgcolor=' + energyColor + '>%1.3f</td>' % t["energy"]
