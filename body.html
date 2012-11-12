@@ -1,0 +1,32 @@
+<table border = "2" cellpadding="5" valign="top">
+<tr>
+<td><p><b>Set List</b></p>
+<form action = "make_set" method = "get">
+	<b>Venue</b><br>
+	<table align = "left">
+		<tr><td><input type = "radio" name = "setType" value = "Club">Club</td></tr>
+		<tr><td><input type = "radio" name = "setType" value = "Wedding">Wedding</td></tr>
+		<tr><td><input type = "radio" name = "setType" value = "Dinner" checked>Dinner</td></tr>
+		<tr><td>Duration:<br><input type = "text" style = "width:50" name = "setLength" value = "60">&nbsp;minutes</td></tr>
+	</table>
+	<table align = "center"><tr><td>
+	<input type = "submit" value = "GO!"><br>
+	</td></tr></table>
+	</td>	
+</form>
+
+<td><p><b>Master Song List</b></p>
+<form action = "make_full_set" method = "get">
+	<b>Sort</b><br>
+	<table align="left">
+		<tr><td><input type = "radio" name = "sortBy" value = "duration" checked>Duration</td></tr>
+		<tr><td><input type = "radio" name = "sortBy" value = "tempo">Tempo</td></tr>
+		<tr><td><input type = "radio" name = "sortBy" value = "energy">Energy</td></tr>
+		<tr><td><input type = "radio" name = "sortBy" value = "danceability">Danceability</td></tr>
+		<tr><td><input type = "radio" name = "sortBy" value = "hotttnesss">Hotttnesss</td></tr>
+	</table>
+	<table align = "center"><tr><td>
+	<input type = "submit" value = "GO!">
+	</td></tr>
+	</td></tr></table>
+</form>
